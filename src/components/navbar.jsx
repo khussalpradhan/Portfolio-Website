@@ -79,28 +79,17 @@ const Navbar = () => {
           <NavLink link={link} key={link.title} />
         ))}
       </div>
-      {/* LOGO */}
-      <div className="md:hidden lg:flex xl:w-1/3 xl:justify-center">
-        <Link
-          href="/"
-          className="text-sm bg-black rounded-md p-1 font-semibold flex items-center justify-center"
-        >
-          <span className="text-white mr-1">Satyam</span>
-          <span className="w-12 h-8 rounded bg-white text-black flex items-center justify-center">
-            SDE
-          </span>
-        </Link>
-      </div>
+      {/* LOGO: removed */}
       {/* SOCIAL */}
       
       <div className="hidden md:flex gap-6 w-1/8">
-        <Link href="https://drive.google.com/file/d/1fGeNT2Oxod-lFUWPsXhWTgsMXj8Hk3rh/view?usp=sharing">
+        <Link href="https://drive.google.com/file/d/1l9bjQDNZZsJNNibMLU0g8Wv8z0w26tMQ/view?usp=sharing">
           <Image src="/resume.png" alt="" width={24} height={24} />
         </Link>
-        <Link href="https://github.com/satryampriyam01">
+        <Link href="https://github.com/khussalpradhan">
           <Image src="/github.png" alt="" width={24} height={24} />
         </Link>
-        <Link href="https://www.linkedin.com/in/satyampriyam01/">
+        <Link href="https://www.linkedin.com/in/khussal-pradhan-896b11186/">
           <Image src="/linkedin.png" alt="" width={24} height={24} />
         </Link>   
       </div>

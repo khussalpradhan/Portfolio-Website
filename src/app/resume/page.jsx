@@ -9,7 +9,7 @@ const ResumePage = () => {
         Discover my professional journey by accessing my resume
       </p> */}
       <a 
-        href="https://drive.google.com/file/d/1fGeNT2Oxod-lFUWPsXhWTgsMXj8Hk3rh/view?usp=sharing" 
+        href="https://drive.google.com/file/d/1l9bjQDNZZsJNNibMLU0g8Wv8z0w26tMQ/view?usp=sharing" 
         target="_blank" 
         rel="noopener noreferrer" 
         style={styles.link}
