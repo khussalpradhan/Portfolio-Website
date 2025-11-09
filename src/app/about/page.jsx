@@ -24,8 +24,8 @@ const AboutPage = () => {
     >
       {/* CONTAINER */}
       <div className="h-full overflow-scroll lg:flex" ref={containerRef}>
-        {/* TEXT CONTAINER */}
-        <div className="p-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64 lg:w-2/3 lg:pr-0">
+  {/* TEXT CONTAINER */}
+  <div className="p-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64 lg:w-3/4 xl:w-4/5 lg:pr-0">
           {/* BIOGRAPHY CONTAINER */}
           <div className="flex flex-col gap-12 justify-center">
             {/* BIOGRAPHY IMAGE */}
@@ -246,7 +246,9 @@ const AboutPage = () => {
                 <div className="w-1/3 ">
                   <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">RBL Bank Ltd.</div>
                   <div className="p-3 text-sm italic">
-                    Software & Automation Engineer (Deputy Manager). Led enterprise automation and infra projects,
+                    Software & Automation Engineer (Deputy Manager)
+                    <br/><br/>
+                    Led enterprise automation and infra projects,
                     including geo-fenced monitoring, Nutanix Calm orchestration, and Citrix DaaS automation.
                   </div>
                   <div className="p-3 text-red-400 text-sm font-semibold">June 2023 - July 2025</div>
@@ -270,7 +272,9 @@ const AboutPage = () => {
                 <div className="w-1/3 ">
                   <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">Tata Digital (Tata Neu)</div>
                   <div className="p-3 text-sm italic">
-                    Software Engineering Intern — built federated auth/SSO (Spring Boot, OAuth2/JWT) and improved reliability
+                    Software Engineering Intern
+                    <br/><br/>
+                    Built federated auth/SSO (Spring Boot, OAuth2/JWT) and improved reliability
                     and performance for authentication services.
                   </div>
                   <div className="p-3 text-red-400 text-sm font-semibold">June 2022 - May 2023</div>
@@ -339,7 +343,7 @@ const AboutPage = () => {
           </div>
         </div>
         {/* SVG CONTAINER */}
-        <div className="hidden lg:block w-1/3 sticky top-0 z-30 xl:w-1/2">
+        <div className="hidden lg:block lg:w-1/4 xl:w-1/5 sticky top-0 z-30">
           <Brain scrollYProgress={scrollYProgress} />
         </div>
       </div>
