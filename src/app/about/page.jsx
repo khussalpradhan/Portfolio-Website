@@ -326,7 +326,8 @@ const AboutPage = () => {
                 <div className="w-1/3 ">
                   <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">Kalinga Institute of Industrial Technology, Bhubaneswar, India</div>
                   <div className="p-3 text-sm italic">
-                    Bachelor of Technology in Computer Science and Systems Engineering — GPA: 3.98/4
+                    Bachelor of Technology in Computer Science and Systems Engineering 
+                    <br/> GPA: 3.98/4
                     <br /><br/>
                     Coursework: Analysis of Algorithms, Software Engineering, Artificial Intelligence, Machine Learning, Data Structures, Operating Systems, Computer Networks, Information Storage &amp; Retrieval
                   </div>
