@@ -9,6 +9,8 @@ const ResumePage = () => {
 
   return (
     <main style={styles.root}>
+      <h1 style={styles.header}>My Resume</h1>
+
       <div style={styles.iframeWrap}>
         <iframe
           title="Resume PDF"
