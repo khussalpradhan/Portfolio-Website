@@ -80,12 +80,8 @@ const PortfolioPage = () => {
       transition={{ duration: 1 }}
     >
       <div className="h-[600vh] relative" ref={ref}>
-        <div className="w-screen h-[calc(100vh-6rem)] flex items-center justify-center text-8xl text-center">
-          Studio
-        </div>
-  <div className="sticky top-0 flex h-screen gap-4 items-center overflow-auto md:overflow-hidden">
+        <div className="sticky top-0 flex h-screen gap-4 items-center overflow-auto md:overflow-hidden">
           <motion.div key={resizeKey} style={{ x }} className="flex">
-            <div className="h-screen w-screen flex items-center justify-center bg-gradient-to-r from-purple-300 to-red-300" />
             {items.map((item) => (
               <div
                 className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r ${item.color}`}
