@@ -235,7 +235,7 @@ const AboutPage = () => {
           <div className="flex flex-col gap-12 justify-center pb-48" ref={experienceRef}>
             {/* EXPERIENCE TITLE */}
             <motion.h1
-              initial={{ x: "-50px" }}
+              initial={{ x: "-300px" }}
               animate={isExperienceRefInView ? { x: "0" } : {}}
               transition={{ delay: 0.2 }}
               className="font-bold text-2xl"
@@ -243,7 +243,7 @@ const AboutPage = () => {
               EXPERIENCE
             </motion.h1>
             {/* EXPERIENCE LIST */}
-            <motion.div initial={{ x: "-10px" }} animate={isExperienceRefInView ? { x: "0" } : {}} className="">
+            <motion.div initial={{ x: "-300px" }} animate={isExperienceRefInView ? { x: "0" } : {}} className="">
               {/* RBL */}
               <div className="flex justify-center h-auto md:h-48">
                 <div className="w-1/3 ">
