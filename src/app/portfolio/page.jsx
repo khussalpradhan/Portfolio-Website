@@ -27,7 +27,8 @@ const items = [
     title: "My Portfolio Website",
     desc: "Created a personal portfolio using Next.js 13 with advanced animations via Framer Motion, SMTP API integration, and Tailwind CSS.",
     img: "/PortfolioWebsite.png",
-    link: "https://satyampriyam.netlify.app/",
+  // Replaced demo link with GitHub profile (no hardcoded demo references)
+    link: "https://github.com/khussalpradhan",
   },
   {
     id: 4,

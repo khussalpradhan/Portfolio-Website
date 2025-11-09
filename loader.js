@@ -7,6 +7,15 @@ export default function myImageLoader({ src, width, quality }) {
     return src;
   }
 
+  // Production: allow an environment-configured image host. Set IMAGE_HOST to
+  // something like 'https://your-host.example' (no trailing slash) in production.
+  // If IMAGE_HOST is not set, fall back to returning the original src.
   const path = src.startsWith("/") ? src : `/${src}`;
-  return `https://satyampriyam.netlify.app${path}?w=${width}&q=${quality || 75}`;
+  const host = process.env.IMAGE_HOST;
+  if (host) {
+    return `${host}${path}?w=${width}&q=${quality || 75}`;
+  }
+
+  // No IMAGE_HOST configured — return src (serve from public or absolute URL).
+  return src;
 }
