@@ -78,18 +78,18 @@ const ContactPage = () => {
           <div className="mb-4 text-gray-700">
   <h1 className="text-xl font-bold text-white-700 mb-1">Email:</h1>
   <h1 className="text-lg text-yellow-700">
-    <a href="mailto:priyam.s@northeastern.edu" className="text-yellow-500 hover:underline">
-      priyam.s@northeastern.edu
+    <a href="mailto:khussal@tamu.edu" className="text-yellow-500 hover:underline">
+      khussal@tamu.edu
     </a>
     {" "}
-    <a href="mailto:satyampriyam01@gmail.com" className="text-yellow-500 hover:underline">
-      satyampriyam01@gmail.com
+    <a href="mailto:pradhankhu@gmail.com" className="text-yellow-500 hover:underline">
+      pradhankhu@gmail.com
     </a>
   </h1>
   <h1 className="text-xl font-bold text-white-700 mt-4 mb-1">Phone:</h1>
   <h1 className="text-lg text-yellow-500">
-    <a href="tel:+18573437331" className="text-yellow-500 hover:underline">
-      857-343-7331
+    <a href="tel:+19795956945" className="text-yellow-500 hover:underline">
+      979-595-6945
     </a>
   </h1>
 </div>
@@ -112,7 +112,7 @@ const ContactPage = () => {
             name="user_email"
             type="email"
             className="p-4 bg-gray-100 border border-gray-300 rounded focus:outline-none focus:border-gray-500"
-            placeholder="john@gmail.com"
+            placeholder="JohnDoe@gmail.com"
             required
           />
 

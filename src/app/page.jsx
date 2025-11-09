@@ -15,24 +15,25 @@ const Homepage = () => {
     >
       <div className="h-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48">
         {/* IMAGE CONTAINER */}
-        <div className="h-1/2 lg:h-full lg:w-1/2 relative">
-          <Image src="/file_3.png" alt="" fill className="object-contain" />
+        <div className="h-1/2 lg:h-full lg:w-1/2 flex items-center justify-center">
+          {/* Rounded white panel + shadow to separate the photo from the page background */}
+          <div className="relative w-full h-72 lg:h-full lg:w-11/12 rounded-2xl overflow-hidden flex items-center justify-center">
+            {/* Use unoptimized so Next's custom loader is bypassed and the local public file is served */}
+            {/* mix-blend-multiply applied so image edges blend with panel background. Other options: mix-blend-screen, mix-blend-overlay, mix-blend-darken, mix-blend-lighten */}
+            <Image src="/file_3_nobg.png" alt="Khussal Pradhan" fill className="object-contain" unoptimized />
+          </div>
         </div>
         {/* TEXT CONTAINER */}
         <div className="h-1/2 lg:h-full lg:w-1/2 flex flex-col gap-8 items-center justify-center">
           {/* TITLE */}
           <h1 className="text-4xl md:text-6xl font-bold">
-            Hi! I'm Satyam Priyam!
+            Hi! I'm Khussal Pradhan!
           </h1>
           {/* DESC */}
           <p className="md:text-xl">
-            I am currently a graduate student pursuing a Master of Science (MS) in 
-            Computer Science with a specialization in 
-            Artificial Intelligence at Northeastern University in Boston, MA.    
-            <br/>
-            My passion lies in Computer Science, and I have a strong interest in software development, 
-            backend web development, cloud computing, and artificial intelligence.
-          </p>
+            <br /><br />
+            I am a Software Development & Automation Engineer with a strong foundation in Backend Systems, Distributed Systems, Enterprise Automation and Product Management. My portfolio reflects my commitment to building robust, high-performance, and scalable software solutions.
+           </p>
           {/* BUTTONS */}
           <div className="w-full flex gap-4">
             <Link href="/portfolio">
