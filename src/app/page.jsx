@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import Link from "next/link";
 
 
 const Homepage = () => {
@@ -37,16 +36,35 @@ const Homepage = () => {
            </p>
           {/* BUTTONS */}
           <div className="w-full flex gap-4 flex-wrap justify-center sm:justify-start">
-            <Link href="/portfolio">
-            <button className="p-4 rounded-lg ring-1 ring-black bg-black text-white w-full sm:w-auto">
-              View My Work
-            </button>
-            </Link>
-            <Link href="/contact">
-            <button className="p-4 rounded-lg ring-1 ring-black w-full sm:w-auto">
-              Contact Me
-            </button>
-            </Link>
+            {(() => {
+              const toHref = (url) => {
+                const isServer = typeof window === "undefined";
+                if (isServer) {
+                  if (process.env.NODE_ENV === "production") {
+                    return url === "/" ? "/" : `${url}.html`;
+                  }
+                  return url;
+                }
+                const host = window.location.hostname || "";
+                const isLocal = host.includes("localhost") || host.startsWith("127.") || host.startsWith("192.168.");
+                if (isLocal) return url;
+                return url === "/" ? "/" : `${url}.html`;
+              };
+              return (
+                <>
+                  <a href={toHref("/portfolio")}>
+                    <button className="p-4 rounded-lg ring-1 ring-black bg-black text-white w-full sm:w-auto">
+                      View My Work
+                    </button>
+                  </a>
+                  <a href={toHref("/contact")}>
+                    <button className="p-4 rounded-lg ring-1 ring-black w-full sm:w-auto">
+                      Contact Me
+                    </button>
+                  </a>
+                </>
+              );
+            })()}
           </div>
         </div>
       </div>

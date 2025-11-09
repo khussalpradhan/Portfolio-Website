@@ -1,10 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
-import NavLink from "./navLink";
 import { motion } from "framer-motion";
+import NavLink from "./navLink";
 
 const links = [
   { url: "/", title: "Home" },
@@ -134,7 +133,7 @@ const Navbar = () => {
                 className=""
                 key={link.title}
               >
-                <Link href={link.url}>{link.title}</Link>
+                <NavLink link={link} />
               </motion.div>
             ))}
           </motion.div>

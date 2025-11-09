@@ -50,6 +50,25 @@ const items = [
 
 const PortfolioPage = () => {
   const ref = useRef();
+  const slideRefs = useRef([]);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const idx = slideRefs.current.indexOf(entry.target);
+            if (idx !== -1) setActiveIndex(idx);
+          }
+        });
+      },
+      { threshold: 0.6 }
+    );
+
+    slideRefs.current.forEach((el) => el && obs.observe(el));
+    return () => obs.disconnect();
+  }, []);
 
   // Remount animation-sensitive motion element on resize so Framer Motion
   // recalculates measurements and transforms. This prevents jumps when
@@ -80,14 +99,15 @@ const PortfolioPage = () => {
       transition={{ duration: 1 }}
     >
       <div className="h-[600vh] relative" ref={ref}>
-        <div className="sticky top-0 flex h-screen gap-4 items-center overflow-auto md:overflow-hidden">
+  <div className="sticky top-0 flex min-h-screen gap-4 items-center overflow-visible md:overflow-hidden">
           <motion.div key={resizeKey} style={{ x }} className="flex">
-            {items.map((item) => (
+            {items.map((item, idx) => (
               <div
+                ref={(el) => (slideRefs.current[idx] = el)}
                 className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r ${item.color}`}
                 key={item.id}
               >
-                <div className="flex flex-col gap-8 text-white items-center">
+                <div className="relative flex flex-col gap-8 text-white items-center pb-20 md:pb-32 lg:pb-40">
                   <h1 className="text-xl font-bold md:text-4xl lg:text-6xl xl:text-8xl">
                     {item.title}
                   </h1>
@@ -95,21 +115,33 @@ const PortfolioPage = () => {
                     <img
                       src={item.img}
                       alt={item.title}
-                      className="h-40 md:h-56 lg:h-[420px] xl:h-[520px] w-auto object-cover"
+                      className="h-28 sm:h-40 md:h-56 lg:h-[420px] xl:h-[520px] w-auto object-cover"
                     />
                   </div>
-                  <p className="w-72 sm:w-80 md:w-96 lg:w-[500px] lg:text-lg xl:w-[600px] text-center">
+                  <p className="max-w-[90vw] sm:max-w-[320px] md:max-w-[480px] lg:max-w-[600px] lg:text-lg text-center">
                     {item.desc}
                   </p>
-                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="flex justify-center">
-                    <button className="p-2 text-sm md:p-4 md:text-md lg:p-6 lg:text-lg bg-white text-gray-600 font-semibold m-4 rounded">View the Repository/Demo</button>
-                  </a>
+
+                  {/* small screens: show a static button below the content (no fixed positioning) */}
+                  <div className="block md:hidden w-full flex justify-center mt-4">
+                    <a href={item.link} target="_blank" rel="noopener noreferrer" className="w-[90%] sm:w-[70%]">
+                      <button className="w-full p-2 text-sm bg-white text-gray-600 font-semibold rounded">View the Repository/Demo</button>
+                    </a>
+                  </div>
+
+                  {/* per-slide action (kept for md+ layouts) */}
+                  <div className="hidden md:block absolute bottom-8 left-0 right-0 flex justify-center z-10">
+                    <a href={item.link} target="_blank" rel="noopener noreferrer" className="flex justify-center">
+                      <button className="p-2 text-sm md:p-4 md:text-md lg:p-6 lg:text-lg bg-white text-gray-600 font-semibold m-4 rounded">View the Repository/Demo</button>
+                    </a>
+                  </div>
                 </div>
               </div>
             ))}
           </motion.div>
         </div>
       </div>
+      
       <div className="w-screen h-screen flex flex-col gap-16 items-center justify-center text-center">
         <h1 className="text-8xl">Do you have a project for me?</h1>
         <div className="relative w-full flex justify-center">
@@ -127,12 +159,29 @@ const PortfolioPage = () => {
               <span className="mx-4">Summer' 26/ Looking for Opportunities /</span>
             </motion.div>
           </div>
-          <Link
-            href="/contact"
-            className="w-16 h-16 md:w-28 md:h-28 absolute top-40 left-0 right-0 bottom-0 m-auto bg-black text-white rounded-full flex items-center justify-center"
-          >
-            Contact Me
-          </Link>
+          {(() => {
+            const toHref = (url) => {
+              const isServer = typeof window === "undefined";
+              if (isServer) {
+                if (process.env.NODE_ENV === "production") {
+                  return url === "/" ? "/" : `${url}.html`;
+                }
+                return url;
+              }
+              const host = window.location.hostname || "";
+              const isLocal = host.includes("localhost") || host.startsWith("127.") || host.startsWith("192.168.");
+              if (isLocal) return url;
+              return url === "/" ? "/" : `${url}.html`;
+            };
+            return (
+              <a
+                href={toHref("/contact")}
+                className="w-16 h-16 md:w-28 md:h-28 absolute top-40 left-0 right-0 bottom-0 m-auto bg-black text-white rounded-full flex items-center justify-center"
+              >
+                Contact Me
+              </a>
+            );
+          })()}
         </div>
       </div>
     </motion.div>
