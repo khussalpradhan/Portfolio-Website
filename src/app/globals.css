@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+	/* Make the root elements span full document height so backgrounds can fill the page */
+	html, body, #__next {
+		height: 100%;
+	}
+
+	/* Apply the primary gradient as a fallback on the html element so the very top is covered */
+	html {
+		@apply bg-gradient-to-b from-blue-100 to-red-100 bg-fixed;
+		/* pale pink (red-100) fallback when gradient doesn't cover the page */
+		background-color: #fee2e2;
+	}
+
+	/* keep a body fallback color as well for browsers that use body for backgrounds */
+	body {
+		background-color: #fee2e2;
+	}
+}

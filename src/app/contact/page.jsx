@@ -41,7 +41,7 @@ const ContactPage = () => {
 
   return (
     <motion.div
-      className="h-full flex items-center justify-center bg-gray-100 my-4 px-4 sm:px-6 md:px-8 lg:px-24 xl:px-48 w-full"
+      className="h-full flex items-center justify-center bg-transparent my-4 px-4 sm:px-6 md:px-8 lg:px-24 xl:px-48 w-full"
       initial={{ y: "-100vh" }}
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}
@@ -72,7 +72,7 @@ const ContactPage = () => {
         <form
           onSubmit={sendEmail}
           ref={form}
-          className="lg:w-1/2 bg-white shadow-lg rounded-lg p-6 sm:p-12 md:p-16 w-full max-w-md mx-auto lg:mx-0 text-lg flex flex-col gap-4"
+          className="lg:w-1/2 bg-white/20 backdrop-blur-sm shadow-lg rounded-lg p-6 sm:p-12 md:p-16 w-full max-w-md mx-auto lg:mx-0 text-lg flex flex-col gap-4"
         >
           {/* Contact Information */}
           <div className="mb-4 text-gray-700">
