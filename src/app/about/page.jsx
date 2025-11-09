@@ -242,7 +242,7 @@ const AboutPage = () => {
             {/* EXPERIENCE LIST */}
             <motion.div initial={{ x: "-10px" }} animate={isExperienceRefInView ? { x: "0" } : {}} className="">
               {/* RBL */}
-              <div className="flex justify-center h-48">
+              <div className="flex justify-center h-auto md:h-48">
                 <div className="w-1/3 ">
                   <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">RBL Bank Ltd.</div>
                   <div className="p-3 text-sm italic">
@@ -262,7 +262,7 @@ const AboutPage = () => {
               </div>
 
               {/* Tata Digital */}
-              <div className="flex justify-between h-48">
+              <div className="flex justify-between h-auto md:h-48">
                 <div className="w-1/3 "></div>
                 <div className="w-1/6 flex justify-center">
                   <div className="w-1 h-full bg-gray-600 rounded relative">
@@ -282,7 +282,7 @@ const AboutPage = () => {
               </div>
 
               {/* AtomToByte (NGO) */}
-              <div className="flex justify-between h-48">
+              <div className="flex justify-between h-auto md:h-48">
                 <div className="w-1/3 ">
                   <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">AtomToByte (NGO)</div>
                   <div className="p-3 text-sm italic">
