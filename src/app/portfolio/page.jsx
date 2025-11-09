@@ -82,7 +82,7 @@ const PortfolioPage = () => {
                     <img
                       src={item.img}
                       alt={item.title}
-                      className="h-40 md:h-56 lg:h-[420px] xl:h-[520px] w-auto object-contain"
+                      className="h-auto w-auto max-h-40 md:max-h-56 lg:max-h-[420px] xl:max-h-[520px] object-contain"
                     />
                   </div>
                   <p className="w-80 md:w96 lg:w-[500px] lg:text-lg xl:w-[600px] text-center">
