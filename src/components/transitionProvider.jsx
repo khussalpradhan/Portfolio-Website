@@ -7,6 +7,20 @@ import { usePathname } from "next/navigation";
 
 const TransitionProvider = ({ children }) => {
   const pathName = usePathname();
+  // compute a friendly label for the transition overlay
+  const raw = pathName === "/" ? "" : pathName.substring(1);
+  const routeLabelMap = {
+    "": "Dashboard",
+    portfolio: "Studio",
+    about: "Know Me",
+    contact: "Contact",
+    resume: "Resume",
+  };
+  const toTitleCase = (s) =>
+    s
+      .replace(/-/g, " ")
+      .replace(/\b\w/g, (c) => c.toUpperCase());
+  const overlayLabel = routeLabelMap[raw] ?? toTitleCase(raw);
 
   return (
     <AnimatePresence mode="wait">
@@ -27,7 +41,7 @@ const TransitionProvider = ({ children }) => {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          {pathName.substring(1)}
+          {overlayLabel}
         </motion.div>
         <motion.div
           className="h-screen w-screen fixed bg-black rounded-t-[100px] bottom-0 z-30"
