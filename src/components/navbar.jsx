@@ -82,7 +82,7 @@ const Navbar = () => {
       {/* LOGO: removed */}
       {/* SOCIAL */}
       
-      <div className="hidden md:flex gap-6 w-1/8">
+  <div className="hidden md:flex gap-6 w-auto">
         <a
           href="https://drive.google.com/file/d/19B_z7u4KDPTvCBtPPNwvUhmHKMgOtOyR/view?usp=sharing"
           target="_blank"

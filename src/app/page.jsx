@@ -36,14 +36,14 @@ const Homepage = () => {
             I am a Software Developer & Automation Engineer with a strong foundation in Backend Systems, Distributed Systems, Enterprise Automation and Product Management. My portfolio reflects my commitment to building robust, high-performance, and scalable software solutions.
            </p>
           {/* BUTTONS */}
-          <div className="w-full flex gap-4">
+          <div className="w-full flex gap-4 flex-wrap justify-center sm:justify-start">
             <Link href="/portfolio">
-            <button className="p-4 rounded-lg ring-1 ring-black bg-black text-white">
+            <button className="p-4 rounded-lg ring-1 ring-black bg-black text-white w-full sm:w-auto">
               View My Work
             </button>
             </Link>
             <Link href="/contact">
-            <button className="p-4 rounded-lg ring-1 ring-black">
+            <button className="p-4 rounded-lg ring-1 ring-black w-full sm:w-auto">
               Contact Me
             </button>
             </Link>

@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import Link from "next/link";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 
 const items = [
   {
@@ -51,6 +51,23 @@ const items = [
 const PortfolioPage = () => {
   const ref = useRef();
 
+  // Remount animation-sensitive motion element on resize so Framer Motion
+  // recalculates measurements and transforms. This prevents jumps when
+  // layout/width changes cause percent-based transforms to behave oddly.
+  const [resizeKey, setResizeKey] = useState(0);
+  useEffect(() => {
+    let t = null;
+    const onResize = () => {
+      clearTimeout(t);
+      t = setTimeout(() => setResizeKey((k) => k + 1), 120);
+    };
+    window.addEventListener("resize", onResize);
+    return () => {
+      clearTimeout(t);
+      window.removeEventListener("resize", onResize);
+    };
+  }, []);
+
   const { scrollYProgress } = useScroll({ target: ref });
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-85%"]);
   const shouldReduceMotion = useReducedMotion();
@@ -66,8 +83,8 @@ const PortfolioPage = () => {
         <div className="w-screen h-[calc(100vh-6rem)] flex items-center justify-center text-8xl text-center">
           Studio
         </div>
-        <div className="sticky top-0 flex h-screen gap-4 items-center overflow-hidden">
-          <motion.div style={{ x }} className="flex">
+  <div className="sticky top-0 flex h-screen gap-4 items-center overflow-auto md:overflow-hidden">
+          <motion.div key={resizeKey} style={{ x }} className="flex">
             <div className="h-screen w-screen flex items-center justify-center bg-gradient-to-r from-purple-300 to-red-300" />
             {items.map((item) => (
               <div
@@ -85,7 +102,7 @@ const PortfolioPage = () => {
                       className="h-40 md:h-56 lg:h-[420px] xl:h-[520px] w-auto object-cover"
                     />
                   </div>
-                  <p className="w-80 md:w96 lg:w-[500px] lg:text-lg xl:w-[600px] text-center">
+                  <p className="w-72 sm:w-80 md:w-96 lg:w-[500px] lg:text-lg xl:w-[600px] text-center">
                     {item.desc}
                   </p>
                   <a href={item.link} target="_blank" rel="noopener noreferrer" className="flex justify-center">
