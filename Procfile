@@ -1,1 +1,1 @@
-web: npx serve@latest out -s -l $PORT
+web: npx http-server out -p $PORT
