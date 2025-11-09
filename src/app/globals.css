@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Prevent horizontal scrollbar caused by utility classes that use 100vw
+	 (w-screen) together with scrollbars or transforms. This is a safe global
+	 rule for this static portfolio app — if you prefer more targeted fixes,
+	 we can change specific components to use w-full instead of w-screen. */
+html, body {
+	overflow-x: hidden;
+}
+
+/* Background fallback: keep a matching gradient (and a solid fallback color)
+	 on the document so transient layout changes or animation states don't show
+	 a white page background. The specific colors mirror the Tailwind classes
+	 used in the top-level overlay (from-blue-100 -> to-red-100). */
+html, body {
+	background-color: #dbeafe; /* from-blue-100 */
+	background-image: linear-gradient(to bottom, #dbeafe 0%, #fee2e2 100%);
+}
