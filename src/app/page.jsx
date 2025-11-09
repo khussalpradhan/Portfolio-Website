@@ -32,7 +32,7 @@ const Homepage = () => {
           {/* DESC */}
           <p className="md:text-xl">
             <br /><br />
-            I am a Software Development & Automation Engineer with a strong foundation in Backend Systems, Distributed Systems, Enterprise Automation and Product Management. My portfolio reflects my commitment to building robust, high-performance, and scalable software solutions.
+            I am a Software Developer & Automation Engineer with a strong foundation in Backend Systems, Distributed Systems, Enterprise Automation and Product Management. My portfolio reflects my commitment to building robust, high-performance, and scalable software solutions.
            </p>
           {/* BUTTONS */}
           <div className="w-full flex gap-4">
