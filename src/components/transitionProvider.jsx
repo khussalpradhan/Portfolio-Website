@@ -48,10 +48,11 @@ const TransitionProvider = ({ children }) => {
           initial={{ height: "140vh" }}
           animate={{ height: "0vh", transition: { delay: 0.5 } }}
         />
-        <div className="h-24">
+        {/* make navbar fixed at top and add top padding to children so content can't sit under it */}
+        <div className="fixed top-0 left-0 right-0 h-24 z-50 bg-white/0"> 
           <Navbar />
         </div>
-        <div className="h-[calc(100vh-6rem)]">{children}</div>
+        <div className="pt-24 h-[calc(100vh-6rem)] relative z-10">{children}</div>
       </div>
     </AnimatePresence>
   );

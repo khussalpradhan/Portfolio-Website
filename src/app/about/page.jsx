@@ -15,6 +15,9 @@ const AboutPage = () => {
   const experienceRef = useRef();
   const isExperienceRefInView = useInView(experienceRef, { margin: "-100px" });
 
+  const educationRef = useRef();
+  const isEducationRefInView = useInView(educationRef, { margin: "-100px" });
+
   return (
     <motion.div
       className="h-full"
@@ -301,11 +304,11 @@ const AboutPage = () => {
           </div>
 
           {/* Education */}
-          <div className="flex flex-col gap-12 justify-center pb-48">
-            <motion.h1 initial={{ x: "-300px" }} animate={isExperienceRefInView ? { x: "0" } : {}} transition={{ delay: 0.2 }} className="font-bold text-2xl">
+          <div className="flex flex-col gap-12 justify-center pb-48" ref={educationRef}>
+            <motion.h1 initial={{ x: "-300px" }} animate={isEducationRefInView ? { x: "0" } : {}} transition={{ delay: 0.2 }} className="font-bold text-2xl">
               EDUCATION
             </motion.h1>
-            <motion.div initial={{ x: "-300px" }} animate={isExperienceRefInView ? { x: "0" } : {}} className="">
+            <motion.div initial={{ x: "-300px" }} animate={isEducationRefInView ? { x: "0" } : {}} className="">
               {/* Texas A&M */}
               <div className="flex justify-between h-48">
                 <div className="w-1/3 "></div>
