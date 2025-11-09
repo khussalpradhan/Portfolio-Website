@@ -53,12 +53,12 @@ const Homepage = () => {
               return (
                 <>
                   <a href={toHref("/portfolio")}>
-                    <button className="p-4 rounded-lg ring-1 ring-black bg-black text-white w-full sm:w-auto">
+                    <button className="p-4 rounded-lg ring-1 ring-black bg-transparent text-black w-full sm:w-auto">
                       View My Work
                     </button>
                   </a>
                   <a href={toHref("/contact")}>
-                    <button className="p-4 rounded-lg ring-1 ring-black w-full sm:w-auto">
+                    <button className="p-4 rounded-lg ring-1 ring-black bg-transparent text-black w-full sm:w-auto">
                       Contact Me
                     </button>
                   </a>
