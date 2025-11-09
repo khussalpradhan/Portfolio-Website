@@ -10,7 +10,6 @@ const AboutPage = () => {
   const { scrollYProgress } = useScroll({ container: containerRef });
 
   const skillRef = useRef();
-  // const isSkillRefInView = useInView(skillRef, {once:true});
   const isSkillRefInView = useInView(skillRef, { margin: "-100px" });
 
   const experienceRef = useRef();
@@ -27,42 +26,35 @@ const AboutPage = () => {
       <div className="h-full overflow-scroll lg:flex" ref={containerRef}>
         {/* TEXT CONTAINER */}
         <div className="p-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64 lg:w-2/3 lg:pr-0">
-{/*            <div className="p-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64 lg:w-2/3 lg:pr-0 xl:w-1/2"> */}
           {/* BIOGRAPHY CONTAINER */}
           <div className="flex flex-col gap-12 justify-center">
             {/* BIOGRAPHY IMAGE */}
             <Image
-              src="/About_me.jpeg"
-              alt="Satyam priyam image"
+              src="/About_me.jpg"
+              alt="khussal image"
               width={112}
               height={112}
               className="w-28 h-28 rounded-full object-cover"
+              unoptimized
             />
             {/* BIOGRAPHY TITLE */}
             <h1 className="font-bold text-2xl">About Me</h1>
             {/* BIOGRAPHY DESC */}
             <p className="md:text-lg">
-               As a Full Stack Software Engineer, I specialize in weaving AI with cloud technologies to architect software that’s not 
-              only smart but also scales beautifully.
-              <br/>
-              <br/>
-              I’m all about creating efficient, user-friendly systems—without any help from ChatGPT, 
-              I assure you! When not immersed in code, I’m likely plotting my next tech breakthrough.
-              <br/>
-              <br/>
-              Ready to build something great? Let’s make software that’s worth tweeting about!
+              As a Software & Automation Engineer, I specialize in weaving AI with distributed backend systems to
+              architect software that’s not only smart but also scales beautifully.
+              <br />
+              <br />
+              I’m all about creating efficient, high-performance systems. I embrace the future of development by leveraging AI
+              coding assistants to accelerate my workflow, allowing me to focus on complex system architecture. My experience is
+              rooted in enterprise-scale automation and performance optimization. When not immersed in code, I’m likely exploring
+              new ways to build resilient, high-availability services.
+              <br />
+              <br />
+              Ready to build something great? Let's architect software that delivers real-world impact
             </p>
             {/* BIOGRAPHY QUOTE */}
-            <span className="italic">
-              Rise and fall are part of "The Journey".
-            </span>
-            {/* BIOGRAPHY SIGN SVG*/}
-            <div className="self-end">
-            
-               <Image src="/sign.svg" width="185"  height="77"/>
-               <h2>Satyam Priyam</h2>
-              
-            </div>
+            <span className="italic">Rise and fall are part of "The Journey".</span>
             {/* BIOGRAPHY SCROLL SVG */}
             <motion.svg
               initial={{ opacity: 0.2, y: 0 }}
@@ -80,11 +72,7 @@ const AboutPage = () => {
                 strokeWidth="1"
               ></path>
               <path d="M12 6V14" stroke="#000000" strokeWidth="1"></path>
-              <path
-                d="M15 11L12 14L9 11"
-                stroke="#000000"
-                strokeWidth="1"
-              ></path>
+              <path d="M15 11L12 14L9 11" stroke="#000000" strokeWidth="1"></path>
             </motion.svg>
           </div>
           {/* SKILLS CONTAINER */}
@@ -104,93 +92,121 @@ const AboutPage = () => {
               animate={isSkillRefInView ? { x: 0 } : {}}
               className="flex gap-4 flex-wrap"
             >
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                JavaScript
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                TypeScript
-              </div>
-                <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Python
-              </div>
-                <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Junit
-              </div>
-                <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                SQLite
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                React.js & Vue.js
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Next.js
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                CSS
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Tailwind CSS
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                MongoDB
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                PostgreSQL
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Node.js
-              </div>
-                <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Elastic Search & Solar Search
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Nest.js
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Express.js
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Kafka & Redis
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Spring Boot
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                GraphQL
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                AWS & GCP
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Redux
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                C/C++
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Three.js
-              </div>
-            
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Webpack
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Maven
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Docker
-              </div>
-              
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Firebase
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Git
-              </div>
-              <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
-                Figma
+              {/* Languages */}
+              <div className="w-full">
+                <h3 className="font-semibold">Languages</h3>
+                <div className="flex gap-4 flex-wrap mt-2">
+                  {[
+                    "Python",
+                    "JavaScript",
+                    "C++",
+                    "SQL",
+                    "Bash",
+                    "PowerShell",
+                    "Ruby",
+                  ].map((t) => (
+                    <div
+                      key={t}
+                      className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black"
+                    >
+                      {t}
+                    </div>
+                  ))}
+                </div>
               </div>
 
+              {/* Frameworks */}
+              <div className="w-full">
+                <h3 className="font-semibold">Frameworks</h3>
+                <div className="flex gap-4 flex-wrap mt-2">
+                  {[
+                    "Django",
+                    "Spring Boot",
+                    "React",
+                    "Node.js",
+                    "Rails",
+                  ].map((t) => (
+                    <div
+                      key={t}
+                      className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black"
+                    >
+                      {t}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Databases */}
+              <div className="w-full">
+                <h3 className="font-semibold">Databases</h3>
+                <div className="flex gap-4 flex-wrap mt-2">
+                  {["MySQL", "PostgreSQL", "MongoDB", "SQL Server"].map((t) => (
+                    <div
+                      key={t}
+                      className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black"
+                    >
+                      {t}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Cloud / DevOps */}
+              <div className="w-full">
+                <h3 className="font-semibold">Cloud / DevOps</h3>
+                <div className="flex gap-4 flex-wrap mt-2">
+                  {["Docker", "GitHub Actions", "CI/CD", "Linux"].map((t) => (
+                    <div
+                      key={t}
+                      className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black"
+                    >
+                      {t}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Systems & Tools */}
+              <div className="w-full">
+                <h3 className="font-semibold">Systems & Tools</h3>
+                <div className="flex gap-4 flex-wrap mt-2">
+                  {[
+                    "Nutanix Calm/Prism",
+                    "Citrix DaaS APIs",
+                    "ServiceDesk Plus",
+                  ].map((t) => (
+                    <div
+                      key={t}
+                      className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black"
+                    >
+                      {t}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Core Expertise */}
+              <div className="w-full">
+                <h3 className="font-semibold">Core Expertise</h3>
+                <div className="flex gap-4 flex-wrap mt-2">
+                  {[
+                    "Backend Systems",
+                    "Automation",
+                    "Distributed Systems",
+                    "Event Driven Architecture",
+                    "Async Processing",
+                    "API Design",
+                    "LLM-powered Apps",
+                  ].map((t) => (
+                    <div
+                      key={t}
+                      className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black"
+                    >
+                      {t}
+                    </div>
+                  ))}
+                </div>
+              </div>
             </motion.div>
             {/* SKILL SCROLL SVG */}
             <motion.svg
@@ -209,18 +225,11 @@ const AboutPage = () => {
                 strokeWidth="1"
               ></path>
               <path d="M12 6V14" stroke="#000000" strokeWidth="1"></path>
-              <path
-                d="M15 11L12 14L9 11"
-                stroke="#000000"
-                strokeWidth="1"
-              ></path>
+              <path d="M15 11L12 14L9 11" stroke="#000000" strokeWidth="1"></path>
             </motion.svg>
           </div>
           {/* EXPERIENCE CONTAINER */}
-          <div
-            className="flex flex-col gap-12 justify-center pb-48"
-            ref={experienceRef}
-          >
+          <div className="flex flex-col gap-12 justify-center pb-48" ref={experienceRef}>
             {/* EXPERIENCE TITLE */}
             <motion.h1
               initial={{ x: "-50px" }}
@@ -231,232 +240,103 @@ const AboutPage = () => {
               EXPERIENCE
             </motion.h1>
             {/* EXPERIENCE LIST */}
-            <motion.div
-              initial={{ x: "-10px" }}
-              animate={isExperienceRefInView ? { x: "0" } : {}}
-              className=""
-            >
-              {/* EXPERIENCE LIST ITEM */}
+            <motion.div initial={{ x: "-10px" }} animate={isExperienceRefInView ? { x: "0" } : {}} className="">
+              {/* RBL */}
               <div className="flex justify-center h-48">
-                {/* LEFT */}
                 <div className="w-1/3 ">
-                  {/* JOB TITLE */}
-                  <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
-                    Quinbay Technology
-                  </div>
-                  {/* JOB DESC */}
+                  <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">RBL Bank Ltd.</div>
                   <div className="p-3 text-sm italic">
-                    I worked as a Backend Engineer for the travel team, developing a 
-                    scalable booking system and e-commerce platform for both B2B and B2C domains.{" "}
+                    Software & Automation Engineer (Deputy Manager). Led enterprise automation and infra projects,
+                    including geo-fenced monitoring, Nutanix Calm orchestration, and Citrix DaaS automation.
                   </div>
-                  {/* JOB DATE */}
-                  <div className="p-3 text-red-400 text-sm font-semibold">
-                    2022 - 2023
-                  </div>
-                  {/* JOB COMPANY */}
-{/*                   <div className="p-1 rounded bg-white text-sm font-semibold w-fit">
-                    Quinbay Technology
-                  </div> */}
+                  <div className="p-3 text-red-400 text-sm font-semibold">June 2023 - July 2025</div>
                 </div>
-                {/* CENTER */}
                 <div className="w-1/6 flex justify-center">
-                  {/* LINE */}
                   <div className="w-1 h-full bg-gray-600 rounded relative">
-                    {/* LINE CIRCLE */}
                     <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2"></div>
                   </div>
                 </div>
-
-
-
-
-                {/* RIGHT */}
                 <div className="w-1/3 "></div>
               </div>
 
-
-              {/* EXPERIENCE LIST ITEM */}
+              {/* Tata Digital */}
               <div className="flex justify-between h-48">
-                {/* LEFT */}
                 <div className="w-1/3 "></div>
-                {/* CENTER */}
                 <div className="w-1/6 flex justify-center">
-                  {/* LINE */}
                   <div className="w-1 h-full bg-gray-600 rounded relative">
-                    {/* LINE CIRCLE */}
                     <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2"></div>
                   </div>
                 </div>
-                {/* RIGHT */}
                 <div className="w-1/3 ">
-                  {/* JOB TITLE */}
-                  <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
-                    Epikindifi
-                  </div>
-                  {/* JOB DESC */}
+                  <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">Tata Digital (Tata Neu)</div>
                   <div className="p-3 text-sm italic">
-                  Analyzed 40,000+ records, improved bonus satisfaction by 24%,
-                    and designed a library system frontend, increasing engagement by 30%.
-                    {" "}
+                    Software Engineering Intern — built federated auth/SSO (Spring Boot, OAuth2/JWT) and improved reliability
+                    and performance for authentication services.
                   </div>
-                  {/* JOB DATE */}
-                  <div className="p-3 text-red-400 text-sm font-semibold">
-                    2022 - 2022{" "}
-                  </div>
-                  {/* JOB COMPANY */}
-{/*                   <div className="p-1 rounded bg-white text-sm font-semibold w-fit">
-                    Epikindifi
-                  </div> */}
+                  <div className="p-3 text-red-400 text-sm font-semibold">June 2022 - May 2023</div>
                 </div>
               </div>
 
-
-
-              {/* EXPERIENCE LIST ITEM */}
+              {/* AtomToByte (NGO) */}
               <div className="flex justify-between h-48">
-                {/* LEFT */}
                 <div className="w-1/3 ">
-                  {/* JOB TITLE */}
-                  <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
-                    AtomToByte (NGO) {" "}
-                  </div>
-                  {/* JOB DESC */}
+                  <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">AtomToByte (NGO)</div>
                   <div className="p-3 text-sm italic">
-                    I provided web solutions, applying a range of technologies
-                    to address NGO's requirements.{" "}
+                    Contributed pro-bono web and product engineering support for NGO initiatives.
                   </div>
-                  {/* JOB DATE */}
-                  <div className="p-3 text-red-400 text-sm font-semibold">
-                    2020 - Present{" "}
-                  </div>
-
+                  <div className="p-3 text-red-400 text-sm font-semibold">2020 - Present</div>
                 </div>
-                {/* CENTER */}
                 <div className="w-1/6 flex justify-center">
-                  {/* LINE */}
                   <div className="w-1 h-full bg-gray-600 rounded relative">
-                    {/* LINE CIRCLE */}
                     <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2"></div>
                   </div>
                 </div>
-
-
-                {/* RIGHT */}
                 <div className="w-1/3 "></div>
               </div>
             </motion.div>
           </div>
 
-
-
-
-{/*Education */}
-<div
-            className="flex flex-col gap-12 justify-center pb-48"
-            ref={experienceRef}
-          >
-            {/* EDUCATION TITLE */}
-            <motion.h1
-              initial={{ x: "-300px" }}
-              animate={isExperienceRefInView ? { x: "0" } : {}}
-              transition={{ delay: 0.2 }}
-              className="font-bold text-2xl"
-            >
+          {/* Education */}
+          <div className="flex flex-col gap-12 justify-center pb-48">
+            <motion.h1 initial={{ x: "-300px" }} animate={isExperienceRefInView ? { x: "0" } : {}} transition={{ delay: 0.2 }} className="font-bold text-2xl">
               EDUCATION
             </motion.h1>
-            {/* EXPERIENCE LIST */}
-            <motion.div
-              initial={{ x: "-300px" }}
-              animate={isExperienceRefInView ? { x: "0" } : {}}
-              className=""
-            >
-              {/* EXPERIENCE LIST ITEM */}
-
-
-              {/* EXPERIENCE LIST ITEM */}
+            <motion.div initial={{ x: "-300px" }} animate={isExperienceRefInView ? { x: "0" } : {}} className="">
+              {/* Texas A&M */}
               <div className="flex justify-between h-48">
-                {/* LEFT */}
                 <div className="w-1/3 "></div>
-                {/* CENTER */}
                 <div className="w-1/6 flex justify-center">
-                  {/* LINE */}
                   <div className="w-1 h-full bg-gray-600 rounded relative">
-                    {/* LINE CIRCLE */}
                     <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2"></div>
                   </div>
                 </div>
-                {/* RIGHT */}
                 <div className="w-1/3 ">
-                  {/* JOB TITLE */}
-                  <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
-                    Northeastern University (MS in CS)
-                  </div>
-                  {/* JOB DESC */}
-                  <div className="p-3 text-sm italic">
-                  <ul className="list-disc list-inside">
-                      <li>PDP</li>
-                      <li>Web Dev</li>
-                      <li>Algorithms</li>
-                      <li>Cloud Computing</li>
-                    </ul>{" "}
-                  </div>
-                  {/* JOB DATE */}
-                  <div className="p-3 text-red-400 text-sm font-semibold">
-                    06/24 - 05/26 {" "}
-                  </div>
-                  {/* JOB COMPANY */}
-{/*                   <div className="p-1 rounded bg-white text-sm font-semibold w-fit">
-                                    Northeastern University (4.0/4.0)
-                  </div> */}
+                  <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">Texas A&amp;M University, College Station, Texas</div>
+                  <div className="p-3 text-sm italic">Master of Science in Computer Science</div>
+                  <div className="p-3 text-red-400 text-sm font-semibold">August 2025 - May 2027</div>
                 </div>
               </div>
 
-
-              {/* EXPERIENCE LIST ITEM */}
+              {/* Kalinga Institute */}
               <div className="flex justify-between h-48">
-                {/* LEFT */}
                 <div className="w-1/3 ">
-                  {/* JOB TITLE */}
-                  <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
-                   KIIT University (B.Tech in CS){" "}
+                  <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">Kalinga Institute of Industrial Technology, Bhubaneswar, India</div>
+                  <div className="p-3 text-sm italic">
+                    Bachelor of Technology in Computer Science and Systems Engineering — GPA: 3.98/4
+                    <br /><br/>
+                    Coursework: Analysis of Algorithms, Software Engineering, Artificial Intelligence, Machine Learning, Data Structures, Operating Systems, Computer Networks, Information Storage &amp; Retrieval
                   </div>
-                  {/* JOB DESC */}
-                  <div className="p-4 text-sm italic">
-                  <ul className="list-disc list-inside">
-                      <li>OS</li>
-                      <li>OOPS</li>
-                     
-                      <li>ML</li>
-                      <li>AI</li>
-                      <li>NLP</li>
-                      <li>Data Structures</li>
-                    </ul>{" "}
-                  </div>
-                  {/* JOB DATE */}
-                  <div className="p-3 text-red-400 text-sm font-semibold">
-                    06/19 - 05/23{" "}
-                  </div>
-
-{/*                   <div className="p-1 rounded bg-white text-sm font-semibold w-fit">
-                    KIIT University (3.98/4.0)
-                  </div>
- */}
+                  <div className="p-3 text-red-400 text-sm font-semibold">July 2019 - May 2023</div>
                 </div>
-                {/* CENTER */}
                 <div className="w-1/6 flex justify-center">
-                  {/* LINE */}
                   <div className="w-1 h-full bg-gray-600 rounded relative">
-                    {/* LINE CIRCLE */}
                     <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2"></div>
                   </div>
                 </div>
-                {/* RIGHT */}
                 <div className="w-1/3 "></div>
               </div>
             </motion.div>
           </div>
-
-
         </div>
         {/* SVG CONTAINER */}
         <div className="hidden lg:block w-1/3 sticky top-0 z-30 xl:w-1/2">

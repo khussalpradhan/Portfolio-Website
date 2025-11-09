@@ -88,13 +88,13 @@ const Navbar = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image src="/resume.png" alt="" width={24} height={24} />
+          <Image src="/resume.png" alt="" width={24} height={24} unoptimized />
         </a>
         <a href="https://github.com/khussalpradhan" target="_blank" rel="noopener noreferrer">
-          <Image src="/github.png" alt="" width={24} height={24} />
+          <Image src="/github.png" alt="" width={24} height={24} unoptimized />
         </a>
         <a href="https://www.linkedin.com/in/khussal-pradhan-896b11186/" target="_blank" rel="noopener noreferrer">
-          <Image src="/linkedin.png" alt="" width={24} height={24} />
+          <Image src="/linkedin.png" alt="" width={24} height={24} unoptimized />
         </a>
       </div>
       {/* RESPONSIVE MENU */}

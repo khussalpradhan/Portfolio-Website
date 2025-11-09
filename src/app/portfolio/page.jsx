@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import Link from "next/link";
 import { useRef } from "react";
 
@@ -52,6 +52,7 @@ const PortfolioPage = () => {
 
   const { scrollYProgress } = useScroll({ target: ref });
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-85%"]);
+  const shouldReduceMotion = useReducedMotion();
 
   return (
     <motion.div
@@ -97,28 +98,24 @@ const PortfolioPage = () => {
       </div>
       <div className="w-screen h-screen flex flex-col gap-16 items-center justify-center text-center">
         <h1 className="text-8xl">Do you have a project for me?</h1>
-        <div className="relative">
-          <motion.svg
-            animate={{ rotate: 360 }}
-            transition={{ duration: 8, ease: "linear", repeat: Infinity }}
-            viewBox="0 0 300 300"
-            className="w-64 h-64 md:w-[500px] md:h-[500px] "
-          >
-            <defs>
-              <path
-                id="circlePath"
-                d="M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 "
-              />
-            </defs>
-            <text fill="#000">
-              <textPath xlinkHref="#circlePath" className="text-xl">
-                Summer' 26/ Looking for Opportunities /
-              </textPath>
-            </text>
-          </motion.svg>
+        <div className="relative w-full flex justify-center">
+          <div className="w-full max-w-2xl overflow-hidden">
+            <motion.div
+              className="whitespace-nowrap text-center text-xl md:text-2xl"
+              animate={shouldReduceMotion ? undefined : { x: ["0%", "-50%"] }}
+              transition={
+                shouldReduceMotion
+                  ? undefined
+                  : { duration: 12, ease: "linear", repeat: Infinity }
+              }
+            >
+              <span className="mx-4">Summer' 26/ Looking for Opportunities /</span>
+              <span className="mx-4">Summer' 26/ Looking for Opportunities /</span>
+            </motion.div>
+          </div>
           <Link
             href="/contact"
-            className="w-16 h-16 md:w-28 md:h-28 absolute top-0 left-0 right-0 bottom-0 m-auto bg-black text-white rounded-full flex items-center justify-center"
+            className="w-16 h-16 md:w-28 md:h-28 absolute top-40 left-0 right-0 bottom-0 m-auto bg-black text-white rounded-full flex items-center justify-center"
           >
             Contact Me
           </Link>
