@@ -26,9 +26,14 @@ coverage/
 .parcel-cache/
 .turbo/
 .eslintcache
+out/
 
 # Local env variants
 .env.*.local
 
 # Misc
 *.tgz
+
+.out/
+.out
+.temp
