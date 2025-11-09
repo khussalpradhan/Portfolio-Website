@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Use Node.js 18
         uses: actions/setup-node@v4
@@ -34,30 +36,18 @@ jobs:
         run: |
           curl https://cli-assets.heroku.com/install.sh | sh
 
-      - name: Add Heroku remote and authenticate via HEROKU_API_KEY
+      - name: Add Heroku remote and push
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+          HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
         run: |
-          # Ensure ~/.netrc is a file (not a directory). If a directory exists, remove it.
-          if [ -d "$HOME/.netrc" ]; then
-            rm -rf "$HOME/.netrc"
-          fi
-          # Write credentials to ~/.netrc for non-interactive Heroku auth
-          cat > "$HOME/.netrc" <<-EOF
-          machine api.heroku.com
-            login _
-            password ${HEROKU_API_KEY}
-          machine git.heroku.com
-            login _
-            password ${HEROKU_API_KEY}
-          EOF
-          chmod 600 "$HOME/.netrc"
-          # Add heroku git remote via CLI
-          heroku git:remote -a khussalpradhan
-
-      - name: Push to Heroku (via CLI-authenticated git)
-        run: |
-          # Force push current HEAD to Heroku main to deploy
+          # Ensure git user is configured in the runner
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          # Remove any existing heroku remote and add one using the API key directly
+          git remote remove heroku || true
+          git remote add heroku https://heroku:${HEROKU_API_KEY}@git.heroku.com/${HEROKU_APP_NAME}.git
+          # Push the current HEAD to Heroku's main branch
           git push --force heroku HEAD:refs/heads/main
 
 # Notes:
