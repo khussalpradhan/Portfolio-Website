@@ -28,14 +28,24 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Add Heroku remote (HTTPS, token-auth)
+      - name: Install Heroku CLI
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         run: |
-          # Use HTTPS remote with API key for non-interactive push
-          git remote add heroku https://heroku:${HEROKU_API_KEY}@git.heroku.com/khussalpradhan.git
+          curl https://cli-assets.heroku.com/install.sh | sh
 
-      - name: Push to Heroku
+      - name: Add Heroku remote and authenticate via HEROKU_API_KEY
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        run: |
+          # Configure Heroku CLI to use the API key (non-interactive)
+          mkdir -p ~/.netrc
+          echo "machine api.heroku.com\n  login _\n  password ${HEROKU_API_KEY}\nmachine git.heroku.com\n  login _\n  password ${HEROKU_API_KEY}" > ~/.netrc
+          chmod 600 ~/.netrc
+          # Add heroku git remote via CLI
+          heroku git:remote -a khussalpradhan
+
+      - name: Push to Heroku (via CLI-authenticated git)
         run: |
           # Force push current HEAD to Heroku main to deploy
           git push --force heroku HEAD:refs/heads/main
