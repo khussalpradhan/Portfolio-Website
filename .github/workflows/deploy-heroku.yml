@@ -1,0 +1,40 @@
+name: Deploy to Heroku
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 18
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to Heroku
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_email: ${{ secrets.HEROKU_EMAIL }}
+          heroku_app_name: khussalpradhan
+          usedocker: false
+
+# Notes:
+# - Add the following repository secrets in GitHub: HEROKU_API_KEY and HEROKU_EMAIL.
+#   HEROKU_API_KEY = your Heroku account API key (Account settings -> API Key)
+#   HEROKU_EMAIL = the email for your Heroku account
+# - This workflow builds the project in the runner and then deploys the built code to the
+#   Heroku app named `khussalpradhan`. If you prefer Heroku to build on its side, you can
+#   replace the deployment step with a git push to the Heroku remote using the API key.
