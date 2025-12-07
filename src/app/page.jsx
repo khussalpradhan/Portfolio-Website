@@ -26,20 +26,17 @@ const Homepage = () => {
           <div className="flex flex-col items-center justify-center gap-6 h-full">
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-center">Hi! I'm Khussal!</h1>
             <div className="flex gap-4 flex-wrap justify-center">
+              {/* Helper function for consistent link handling */}
               {(() => {
                 const toHref = (url) => {
-                  const isServer = typeof window === "undefined";
-                  if (isServer) {
-                    if (process.env.NODE_ENV === "production") {
-                      return url === "/" ? "/" : `${url}.html`;
-                    }
-                    return url;
+                  if (typeof window === "undefined") {
+                    return process.env.NODE_ENV === "production" && url !== "/" ? `${url}.html` : url;
                   }
                   const host = window.location.hostname || "";
                   const isLocal = host.includes("localhost") || host.startsWith("127.") || host.startsWith("192.168.");
-                  if (isLocal) return url;
-                  return url === "/" ? "/" : `${url}.html`;
+                  return isLocal ? url : (url === "/" ? "/" : `${url}.html`);
                 };
+
                 return (
                   <>
                     <a href={toHref("/portfolio")}>

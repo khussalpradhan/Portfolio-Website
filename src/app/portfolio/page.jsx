@@ -25,7 +25,7 @@ const items = [
     id: 3,
     color: "from-fuchsia-300 to-pink-300",
     title: "Split Expense",
-    desc: "Devised microservices using Spring Boot (Backend), MongoDB, Elastic Search to deliver RESTful APIs for user management and expense splitting\tEngineered robust back-end functionalities that enabled the creation of over 150 user groups and facilitated real-time balance tracking.",
+    desc: "Devised microservices using Spring Boot (Backend), MongoDB, Elastic Search to deliver RESTful APIs for user management and expense splitting. Engineered robust back-end functionalities that enabled the creation of over 150 user groups and facilitated real-time balance tracking.",
     img: "/splitExpense.webp",
     link: "https://github.com/khussalpradhan/SplitExpense",
   },

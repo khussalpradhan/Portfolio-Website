@@ -25,12 +25,12 @@ const AboutPage = () => {
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}
     >
-    {/* CONTAINER: make this a full-viewport scroller so scrollbars sit at the
+      {/* CONTAINER: make this a full-viewport scroller so scrollbars sit at the
       bottom of the browser window. Hide horizontal overflow to prevent
       inner elements from producing a floating horizontal scrollbar. */}
-    <div className="h-screen overflow-y-auto overflow-x-hidden lg:flex" ref={containerRef}>
-  {/* TEXT CONTAINER */}
-  <div className="p-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64 lg:w-3/4 xl:w-4/5 lg:pr-0">
+      <div className="h-screen overflow-y-auto overflow-x-hidden lg:flex" ref={containerRef}>
+        {/* TEXT CONTAINER */}
+        <div className="p-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64 lg:w-3/4 xl:w-4/5 lg:pr-0">
           {/* BIOGRAPHY CONTAINER */}
           <div className="flex flex-col gap-12 justify-center">
             {/* BIOGRAPHY IMAGE */}
@@ -113,6 +113,10 @@ const AboutPage = () => {
                     "Node.js",
                     "Next.js",
                     "Rails",
+                    "FastAPI",
+                    "Streamlit",
+                    "Pytorch",
+                    "Spacy",
                   ].map((t) => (
                     <div
                       key={t}
@@ -128,8 +132,8 @@ const AboutPage = () => {
               <div className="w-full">
                 <h3 className="font-semibold">Databases</h3>
                 <div className="flex gap-4 flex-wrap mt-2">
-                  {["MySQL", "PostgreSQL", "MongoDB", "SQL Server"].map((t) => (
-                    <div
+                  {["MySQL", "PostgreSQL", "MongoDB", "SQL Server", "OpenSearch", "FAISS"].map((t) => (
+                    < div
                       key={t}
                       className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black"
                     >
@@ -143,7 +147,7 @@ const AboutPage = () => {
               <div className="w-full">
                 <h3 className="font-semibold">Cloud / DevOps</h3>
                 <div className="flex gap-4 flex-wrap mt-2">
-                  {["Docker", "GitHub Actions", "CI/CD", "Linux"].map((t) => (
+                  {["Docker", "GitHub Actions", "CI/CD", "Linux", "Oracle Cloud"].map((t) => (
                     <div
                       key={t}
                       className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black"
@@ -162,6 +166,7 @@ const AboutPage = () => {
                     "Nutanix Calm/Prism",
                     "Citrix DaaS APIs",
                     "ServiceDesk Plus",
+                    "UMLS",
                   ].map((t) => (
                     <div
                       key={t}
@@ -185,6 +190,8 @@ const AboutPage = () => {
                     "Async Processing",
                     "API Design",
                     "LLM-powered Apps",
+                    "NLP",
+                    "Vector Search",
                   ].map((t) => (
                     <div
                       key={t}
@@ -217,7 +224,7 @@ const AboutPage = () => {
                   <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">RBL Bank, Mumbai, India</div>
                   <div className="p-3 text-sm italic">
                     Software & Automation Engineer (Deputy Manager)
-                    <br/><br/>
+                    <br /><br />
                     Led enterprise automation and infra projects,
                     including geo-fenced monitoring, Nutanix Calm orchestration, and Citrix DaaS automation.
                   </div>
@@ -243,7 +250,7 @@ const AboutPage = () => {
                   <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">Tata Digital (Tata Neu), Mumbai, India</div>
                   <div className="p-3 text-sm italic">
                     Software Engineering Intern
-                    <br/><br/>
+                    <br /><br />
                     Built federated auth/SSO (Spring Boot, OAuth2/JWT) and improved reliability
                     and performance for authentication services.
                   </div>
@@ -302,9 +309,9 @@ const AboutPage = () => {
                 <div className="w-1/3 ">
                   <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">Kalinga Institute of Industrial Technology, Bhubaneswar, India</div>
                   <div className="p-3 text-sm italic">
-                    Bachelor of Technology in Computer Science and Systems Engineering 
-                    <br/> GPA: 3.98/4
-                    <br /><br/>
+                    Bachelor of Technology in Computer Science and Systems Engineering
+                    <br /> GPA: 3.98/4
+                    <br /><br />
                     Coursework: Analysis of Algorithms, Software Engineering, Artificial Intelligence, Machine Learning, Data Structures, Operating Systems, Computer Networks, Information Storage &amp; Retrieval
                   </div>
                   <div className="p-3 text-red-400 text-sm font-semibold">July 2019 - May 2023</div>
@@ -317,8 +324,8 @@ const AboutPage = () => {
         <div className="hidden lg:block lg:w-1/4 xl:w-1/5 sticky top-0 z-30">
           <Brain scrollYProgress={scrollYProgress} />
         </div>
-      </div>
-    </motion.div>
+      </div >
+    </motion.div >
   );
 };
 

@@ -76,23 +76,23 @@ const ContactPage = () => {
         >
           {/* Contact Information */}
           <div className="mb-4 text-gray-700">
-  <h1 className="text-xl font-bold text-white-700 mb-1">Email:</h1>
-  <h1 className="text-lg text-yellow-700">
-    <a href="mailto:khussal@tamu.edu" className="text-yellow-500 hover:underline">
-      khussal@tamu.edu
-    </a>
-    {" "}
-    <a href="mailto:pradhankhu@gmail.com" className="text-yellow-500 hover:underline">
-      pradhankhu@gmail.com
-    </a>
-  </h1>
-  <h1 className="text-xl font-bold text-white-700 mt-4 mb-1">Phone:</h1>
-  <h1 className="text-lg text-yellow-500">
-    <a href="tel:+19795956945" className="text-yellow-500 hover:underline">
-      979-595-6945
-    </a>
-  </h1>
-</div>
+            <h1 className="text-xl font-bold text-gray-700 mb-1">Email:</h1>
+            <h1 className="text-lg text-yellow-700">
+              <a href="mailto:khussal@tamu.edu" className="text-yellow-500 hover:underline">
+                khussal@tamu.edu
+              </a>
+              {" "}
+              <a href="mailto:pradhankhu@gmail.com" className="text-yellow-500 hover:underline">
+                pradhankhu@gmail.com
+              </a>
+            </h1>
+            <h1 className="text-xl font-bold text-gray-700 mt-4 mb-1">Phone:</h1>
+            <h1 className="text-lg text-yellow-500">
+              <a href="tel:+19795956945" className="text-yellow-500 hover:underline">
+                979-595-6945
+              </a>
+            </h1>
+          </div>
 
 
           <span className="font-semibold">Send a message:</span>
