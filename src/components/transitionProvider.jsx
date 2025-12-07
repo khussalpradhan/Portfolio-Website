@@ -8,7 +8,12 @@ import { usePathname } from "next/navigation";
 const TransitionProvider = ({ children }) => {
   const pathName = usePathname();
   // compute a friendly label for the transition overlay
-  const raw = pathName === "/" ? "" : pathName.substring(1);
+  // Handle static export paths that might end in .html
+  let cleanPath = pathName;
+  if (cleanPath && cleanPath.endsWith(".html")) {
+    cleanPath = cleanPath.slice(0, -5);
+  }
+  const raw = cleanPath === "/" ? "" : cleanPath.substring(1);
   const routeLabelMap = {
     "": "Dashboard",
     portfolio: "Studio",
@@ -49,7 +54,7 @@ const TransitionProvider = ({ children }) => {
           animate={{ height: "0vh", transition: { delay: 0.5 } }}
         />
         {/* make navbar fixed at top and add top padding to children so content can't sit under it */}
-        <div className="fixed top-0 left-0 right-0 h-24 z-50 bg-white/0"> 
+        <div className="fixed top-0 left-0 right-0 h-24 z-50 bg-white/0">
           <Navbar />
         </div>
         <div className="pt-24 min-h-[calc(100vh-6rem)] relative z-10">{children}</div>
