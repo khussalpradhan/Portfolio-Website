@@ -85,11 +85,11 @@ const AboutPage = () => {
                 <div className="flex gap-4 flex-wrap mt-2">
                   {[
                     "Python",
-                    "JavaScript",
                     "C++",
+                    "Java",
                     "SQL",
+                    "JavaScript",
                     "Bash",
-                    "PowerShell",
                     "Ruby",
                   ].map((t) => (
                     <div
@@ -107,16 +107,14 @@ const AboutPage = () => {
                 <h3 className="font-semibold">Frameworks</h3>
                 <div className="flex gap-4 flex-wrap mt-2">
                   {[
+                    "PyTorch",
+                    "HuggingFace",
                     "Django",
+                    "FastAPI",
                     "Spring Boot",
                     "React",
                     "Node.js",
-                    "Next.js",
-                    "Rails",
-                    "FastAPI",
                     "Streamlit",
-                    "Pytorch",
-                    "Spacy",
                   ].map((t) => (
                     <div
                       key={t}
@@ -130,10 +128,10 @@ const AboutPage = () => {
 
               {/* Databases */}
               <div className="w-full">
-                <h3 className="font-semibold">Databases</h3>
+                <h3 className="font-semibold">Databases & Search</h3>
                 <div className="flex gap-4 flex-wrap mt-2">
-                  {["MySQL", "PostgreSQL", "MongoDB", "SQL Server", "OpenSearch", "FAISS"].map((t) => (
-                    < div
+                  {["PostgreSQL", "MySQL", "MongoDB", "OpenSearch", "FAISS"].map((t) => (
+                    <div
                       key={t}
                       className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black"
                     >
@@ -158,39 +156,17 @@ const AboutPage = () => {
                 </div>
               </div>
 
-              {/* Systems & Tools */}
-              <div className="w-full">
-                <h3 className="font-semibold">Systems & Tools</h3>
-                <div className="flex gap-4 flex-wrap mt-2">
-                  {[
-                    "Nutanix Calm/Prism",
-                    "Citrix DaaS APIs",
-                    "ServiceDesk Plus",
-                    "UMLS",
-                  ].map((t) => (
-                    <div
-                      key={t}
-                      className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black"
-                    >
-                      {t}
-                    </div>
-                  ))}
-                </div>
-              </div>
-
               {/* Core Expertise */}
               <div className="w-full">
                 <h3 className="font-semibold">Core Expertise</h3>
                 <div className="flex gap-4 flex-wrap mt-2">
                   {[
-                    "Backend Systems",
-                    "Automation",
-                    "Distributed Systems",
-                    "Event Driven Architecture",
-                    "Async Processing",
-                    "API Design",
-                    "LLM-powered Apps",
-                    "NLP",
+                    "Applied NLP",
+                    "Large Language Models (LLMs)",
+                    "Information Retrieval",
+                    "Knowledge Distillation",
+                    "Extreme Multi-Label Classification",
+                    "Microservices",
                     "Vector Search",
                   ].map((t) => (
                     <div
@@ -218,61 +194,42 @@ const AboutPage = () => {
             </motion.h1>
             {/* EXPERIENCE LIST */}
             <motion.div initial={{ x: "-300px" }} animate={isExperienceRefInView ? { x: "0" } : {}} className="">
+              {/* SKY Lab */}
+              <div className="flex justify-between h-auto md:h-48">
+                <div className="w-1/3 ">
+                  <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">Texas A&M University (SKY Lab), College Station, TX</div>
+                  <div className="p-3 text-sm italic">
+                    Graduate Research Assistant
+                    <br /><br />
+                    Architected a multi-stage semantic retrieval and neural re-ranking pipeline. Engineered a teacher-student knowledge distillation framework using PyTorch and HuggingFace.
+                  </div>
+                  <div className="p-3 text-red-400 text-sm font-semibold">Dec 2025 - Present</div>
+                </div>
+                <div className="w-1/6 flex justify-center">
+                  <div className="w-1 h-full bg-gray-600 rounded relative">
+                    <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2"></div>
+                  </div>
+                </div>
+                <div className="w-1/3 "></div>
+              </div>
+
               {/* RBL */}
               <div className="flex justify-between h-auto md:h-48">
+                <div className="w-1/3 "></div>
+                <div className="w-1/6 flex justify-center">
+                  <div className="w-1 h-full bg-gray-600 rounded relative">
+                    <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2"></div>
+                  </div>
+                </div>
                 <div className="w-1/3 ">
-                  <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">RBL Bank, Mumbai, India</div>
+                  <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">RBL Bank Ltd., Mumbai, India</div>
                   <div className="p-3 text-sm italic">
-                    Software & Automation Engineer (Deputy Manager)
+                    Software Engineer (Deputy Manager)
                     <br /><br />
-                    Led enterprise automation and infra projects,
-                    including geo-fenced monitoring, Nutanix Calm orchestration, and Citrix DaaS automation.
+                    Led team of 5 to automate 250+ enterprise workflows. Architected RBAC-secured APIs and a geo-fenced monitoring system. Engineered Citrix and Nutanix automation pipelines.
                   </div>
-                  <div className="p-3 text-red-400 text-sm font-semibold">June 2023 - July 2025</div>
+                  <div className="p-3 text-red-400 text-sm font-semibold">Jun 2023 - Jul 2025</div>
                 </div>
-                <div className="w-1/6 flex justify-center">
-                  <div className="w-1 h-full bg-gray-600 rounded relative">
-                    <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2"></div>
-                  </div>
-                </div>
-                <div className="w-1/3 "></div>
-              </div>
-
-              {/* Tata Digital */}
-              <div className="flex justify-between h-auto md:h-48">
-                <div className="w-1/3 "></div>
-                <div className="w-1/6 flex justify-center">
-                  <div className="w-1 h-full bg-gray-600 rounded relative">
-                    <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2"></div>
-                  </div>
-                </div>
-                <div className="w-1/3 ">
-                  <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">Tata Digital (Tata Neu), Mumbai, India</div>
-                  <div className="p-3 text-sm italic">
-                    Software Engineering Intern
-                    <br /><br />
-                    Built federated auth/SSO (Spring Boot, OAuth2/JWT) and improved reliability
-                    and performance for authentication services.
-                  </div>
-                  <div className="p-3 text-red-400 text-sm font-semibold">June 2022 - May 2023</div>
-                </div>
-              </div>
-
-              {/* AtomToByte (NGO) */}
-              <div className="flex justify-between h-auto md:h-48">
-                <div className="w-1/3 ">
-                  <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">AtomToByte (NGO)</div>
-                  <div className="p-3 text-sm italic">
-                    Contributed pro-bono web and product engineering support for NGO initiatives.
-                  </div>
-                  <div className="p-3 text-red-400 text-sm font-semibold">2020 - Present</div>
-                </div>
-                <div className="w-1/6 flex justify-center">
-                  <div className="w-1 h-full bg-gray-600 rounded relative">
-                    <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2"></div>
-                  </div>
-                </div>
-                <div className="w-1/3 "></div>
               </div>
             </motion.div>
           </div>

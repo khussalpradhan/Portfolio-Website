@@ -8,8 +8,8 @@ const items = [
   {
     id: 1,
     color: "from-indigo-300 to-violet-300",
-    title: "Clinical Trial Search Engine",
-    desc: "Built a high-precision search engine using Hybrid Retrieval (BM25 + PubMedBERT) and Reciprocal Rank Fusion (RRF) to match patient profiles against NCI protocols. Implemented an NLP Feasibility Scorer with UMLS entity linking to validate complex criteria like biomarkers and ECOG status. Optimized query latency by 50% using PostgreSQL JSONB caching and deployed a scalable microservices stack with Docker, FastAPI, and OpenSearch.",
+    title: "TrialMatch+: Search Engine",
+    desc: "Engineered a multi-stage NLP pipeline using LLM-based query distillation. Architected a bi-path hybrid retrieval engine integrating OpenSearch BM25 and FAISS vector search (PubMedBERT) with RRF scoring. Implemented a Cross-Encoder re-ranking layer for complex clinical logic, and optimized inference latency using PostgreSQL JSONB caching within a Dockerized FastAPI microservices stack.",
     img: "/ClinicalTrial.jpeg",
     link: "https://github.com/khussalpradhan/Clinical-Trial-SearchEngine",
   },

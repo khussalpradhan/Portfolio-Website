@@ -27,7 +27,7 @@ const Homepage = () => {
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-center">Hi! I'm Khussal!</h1>
 
             <p className="max-w-xl text-center md:text-xl font-medium">
-              I am a Software Developer & Automation Engineer with a strong foundation in Backend Systems, Distributed Systems, Enterprise Automation and Product Management. My portfolio reflects my commitment to building robust, high-performance, and scalable software solutions.
+              I am an AI & Software Engineer specializing in Applied NLP, Large Language Models, and Distributed Backend Systems. My portfolio reflects my commitment to engineering robust, high-performance, and intelligent architectures—from multi-stage semantic retrieval platforms to scalable enterprise automation.
             </p>
 
             <div className="flex gap-4 flex-wrap justify-center">

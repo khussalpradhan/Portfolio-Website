@@ -83,7 +83,7 @@ const Navbar = () => {
 
       <div className="hidden md:flex gap-6 w-auto">
         <a
-          href="https://drive.google.com/file/d/16e9cppHHDxRV8j--mjXsGHXZMQBsBtSH/view?usp=sharing"
+          href="https://drive.google.com/file/d/12zRnRQ1ApJ4Z2QbeSno7gHmppm58DEMF/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
         >
